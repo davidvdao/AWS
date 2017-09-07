@@ -16,6 +16,10 @@ pipeline {
     stage('provision') {
       steps {
         echo 'packer'
+        bat '''
+          cd %WORKSPACE%\\Packer
+          packer build packer_template.json
+        '''
         echo 'terraform'
       }
     }

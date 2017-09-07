@@ -20,6 +20,6 @@ pipeline {
   environment {
     aws_access_key = credentials('AWS_ACCESS_KEY_ID')
     aws_secret_key = credentials('AWS_SECRET_ACCESS_KEY')
-    artifact_pass = credentials('my-prefined-secret-text') 
+    //artifact_pass = credentials('my-prefined-secret-text') 
   }
 }

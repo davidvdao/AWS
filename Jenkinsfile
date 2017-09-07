@@ -10,7 +10,7 @@ pipeline {
         git(url: 'https://github.com/davidvdao/AWS', branch: 'master')
         bat "if exist z:\\ ( net use z: /delete) & net use z: \\\\54.82.119.60\\Artifact /user:Administrator ${env.AWS_ARTIFACT_PASS}"
         bat 'del /f /q C:\\TABuild\\*'
-        bat 'copy z:\\\\TABuild\\* C:\\\\TABuild'
+        bat 'copy z:\\TABuild\\* C:\\TABuild'
       }
     }
     stage('provision') {

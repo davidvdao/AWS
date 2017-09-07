@@ -11,7 +11,8 @@ pipeline {
         bat 'if exist z: (net use z: /delete & echo "done")'
         bat "net use z: \\\\54.82.119.60\\Artifact /user:Administrator ${env.AWS_ARTIFACT_PASS}"
         bat 'if exist z:\\ ( echo "have Z")'
-        bat "del /f /q C:\\TABuild\\* & copy 'Z:\\TABuild' 'C:\\TABuild'"
+        bat "del /f /q C:\\TABuild\\*"
+        bat "copy 'Z:\\TABuild' 'C:\\TABuild'"
       }
     }
     stage('provision') {

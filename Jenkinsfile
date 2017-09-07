@@ -9,14 +9,14 @@ pipeline {
     stage('precondition') {
       steps {
         echo 'precondition'
-        echo '${env.AWS_ACCESS_KEY_ID}'
+        echo "${env.AWS_ACCESS_KEY_ID}"
         echo "${env.AWS_SECRET_ACCESS_KEY}"
-        echo '${ArtifactPass}'
-        echo '${env.ArtifactPass}'
+        String pass = "${env.ArtifactPass}"
+        echo "${env.ArtifactPass}"
         git(url: 'https://github.com/davidvdao/AWS', branch: 'master')
         bat '''
           if exist z:\\ ( net use z: /delete)
-          net use z: \\\\54.82.119.60\\Artifact /user:Administrator %env.ArtifactPass%
+          net use z: \\\\54.82.119.60\\Artifact /user:Administrator "${env.ArtifactPass}"
         '''
       }
     }

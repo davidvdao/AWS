@@ -32,5 +32,12 @@
 			"source" : "Z:\\TABuild\\install.iss",
 			"destination" : "C:\\TABuild\\install.iss"
 		}
+	],
+	"post-processors": [
+		{
+			"type": "manifest",
+			"output": "manifest.json",
+			"strip_path": true
+		}
 	]
 }

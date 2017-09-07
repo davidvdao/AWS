@@ -8,7 +8,7 @@ pipeline {
         echo "${env.AWS_SECRET_ACCESS_KEY}"
         echo "${env.AWS_ARTIFACT_PASS}"
         git(url: 'https://github.com/davidvdao/AWS', branch: 'master')
-        bat "if exist z:\\ ( net use z: /delete) & net use z: \\\\54.82.119.60\\Artifact /user:Administrator ${env.AWS_ARTIFACT_PASS}"
+        //bat "if exist z:\\ ( net use z: /delete) & net use z: \\\\54.82.119.60\\Artifact /user:Administrator ${env.AWS_ARTIFACT_PASS}"
         bat '''
           del /f /q C:\\TABuild\\*
           copy z:\\TABuild C:\\TABuild

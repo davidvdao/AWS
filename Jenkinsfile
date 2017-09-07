@@ -9,8 +9,8 @@ pipeline {
     stage('precondition') {
       steps {
         echo 'precondition'
-        echo credentials('AWS_ACCESS_KEY_ID')
-        echo '%AWS_SECRET_ACCESS_KEY%'
+        echo '${AWS_ACCESS_KEY_ID}'
+        echo '${AWS_SECRET_ACCESS_KEY}'
         git(url: 'https://github.com/davidvdao/AWS', branch: 'master')
         bat '''
           if exist z:\\ ( net use z: /delete)

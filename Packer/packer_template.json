@@ -1,7 +1,7 @@
 {
 	"variables": {
-		"aws_access_key" : "AKIAJ4XD6CXP6ADRSMGQ",
-		"aws_secret_key" : "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",
+		"aws_access_key" : "{{env `aws_access`}}",
+		"aws_secret_key" : "{{env `aws_secret`}}",
 		"ami_id" : "ami-1df65f0b",
 		"aws_instance_type" : "t2.micro",
 		"winrm_username" : "Administrator",
@@ -11,8 +11,8 @@
 		{
 			"ami_name" : "Packer AMI {{timestamp}}",
 			"type" : "amazon-ebs",
-			"secret_key" : "3ZtiVbzp2kncIULS0lZ3aZ7b7yLr3BeqVHdOemtI",
-			"access_key" : "AKIAJ4XD6CXP6ADRSMGQ",
+			"secret_key" : "{{user `aws_secret_key`}}",
+			"access_key" : "{{user `aws_access_key`}}",
 			"region" : "us-east-1",
 			"instance_type" : "t2.micro",
 			"source_ami" : "ami-1df65f0b",

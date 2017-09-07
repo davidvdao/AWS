@@ -1,0 +1,8 @@
+{
+	"aws_access_key" : "AKIAJ6Z65EHEEK3WEXHQ",
+	"aws_secret_key" : "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",
+	"ami_id" : "ami-1df65f0b",
+	"instance_type" : "t2.micro",
+	"winrm_username" : "Administrator",
+	"winrm_password" : "123456"
+}

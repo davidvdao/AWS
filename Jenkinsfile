@@ -11,6 +11,7 @@ pipeline {
         bat 'if exist z: (net use z: /delete & echo "done")'
         bat "del /f /q C:\\TABuild\\*"
         bat "net use z: \\\\54.82.119.60\\Artifact /user:Administrator ${env.AWS_ARTIFACT_PASS} & copy Z:\\TABuild C:\\TABuild"
+        bat 'C:\\TABuild\\TestArchitect_8.3.1.73_x64.exe -s -f1"C:\\TABuild\\install.iss"'
       }
     }
     stage('provision') {
